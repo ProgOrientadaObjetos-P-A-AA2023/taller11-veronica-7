@@ -1,25 +1,44 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package paquete01;
 
-/**
- *
- * @author reroes
- */
+import java.util.ArrayList;
+import paquete02.*;
+
 public class Ejecutor01 {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        ArrayList<Menu> lista = new ArrayList<>();
+
+        Menu menuN1 = new MenuNinos("Niños 01", 2, 1, 1.5);
+        menuN1.establecerValorMenu();
+        lista.add(menuN1);
+        
+        Menu menuN2 = new MenuNinos("Niños 02", 3, 1, 1.5);
+        menuN2.establecerValorMenu();
+        lista.add(menuN2);
+
+        Menu menuE = new MenuEconomico("Econo 001", 4, 25);
+        menuE.establecerValorMenu();
+        lista.add(menuE);
+
+        Menu menuD = new MenuDia("Dia 001", 5, 1, 1);
+        menuD.establecerValorMenu();
+        lista.add(menuD);
+
+        Menu menuC = new MenuCarta("Carta 001", 6, 1.5, 2, 10);
+        menuC.establecerValorMenu();
+        lista.add(menuC);
+        
+        
+        Cuenta cuenta = new Cuenta("René Elizalde", lista, 10);
+        cuenta.establecerSubtotal();
+        cuenta.establecerValorCancelar();
+
+        System.out.print(cuenta);
     }
-    
-    
 }
+
 // lo que debe presentar
 /*
 Factura
